@@ -1,0 +1,8 @@
+CNC_firmware/CNC
+CNC_firmware/CNC.cogui
+CNC_firmware/CNC.comarker
+CNC_firmware/CNC.comemgui
+CNC_firmware/componentfile.history
+UsbHost/UsbHost_firmware/UsbHost.X/build
+UsbHost/UsbHost_firmware/UsbHost.X/dist
+build-*-Desktop-*

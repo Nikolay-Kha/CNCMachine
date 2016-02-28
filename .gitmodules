@@ -1,0 +1,3 @@
+[submodule "GUILib"]
+	path = GUILib
+	url = https://github.com/Nikolay-Kha/GUILib.git

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Project version="2G - 1.7.5" name="CNC">
+  <Target name="CNC" isCurrent="1">
+    <Device manufacturerId="9" manufacturerName="ST" chipId="329" chipName="STM32F103ZE" boardId="" boardName=""/>
+    <BuildOption>
+      <Compile>
+        <Option name="OptimizationLevel" value="0"/>
+        <Option name="UseFPU" value="0"/>
+        <Option name="UserEditCompiler" value=""/>
+        <Includepaths>
+          <Includepath path="."/>
+        </Includepaths>
+        <DefinedSymbols>
+          <Define name="STM32F103ZE"/>
+          <Define name="STM32F10X_HD"/>
+          <Define name="USE_STDPERIPH_DRIVER"/>
+          <Define name="__ASSEMBLY__"/>
+        </DefinedSymbols>
+      </Compile>
+      <Link useDefault="0">
+        <Option name="DiscardUnusedSection" value="0"/>
+        <Option name="UserEditLinkder" value=""/>
+        <Option name="UseMemoryLayout" value="1"/>
+        <Option name="LTO" value="0"/>
+        <Option name="IsNewStartupCode" value="1"/>
+        <Option name="Library" value="Not use C Library"/>
+        <Option name="UserEditLinker" value="-lm;"/>
+        <LinkedLibraries/>
+        <MemoryAreas debugInFlashNotRAM="1">
+          <Memory name="IROM1" type="ReadOnly" size="0x00080000" startValue="0x08000000"/>
+          <Memory name="IRAM1" type="ReadWrite" size="0x00010000" startValue="0x20000000"/>
+          <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
+          <Memory name="IRAM2" type="ReadWrite" size="" startValue=""/>
+        </MemoryAreas>
+        <LocateLinkFile path="c:/coocox/coide/configuration/programdata/cnc/arm-gcc-link.ld" type="0"/>
+      </Link>
+      <Output>
+        <Option name="OutputFileType" value="0"/>
+        <Option name="Path" value="./"/>
+        <Option name="Name" value="CNC"/>
+        <Option name="HEX" value="1"/>
+        <Option name="BIN" value="1"/>
+      </Output>
+      <User>
+        <UserRun name="Run#1" type="Before" checked="0" value=""/>
+        <UserRun name="Run#1" type="After" checked="0" value=""/>
+      </User>
+    </BuildOption>
+    <DebugOption>
+      <Option name="org.coocox.codebugger.gdbjtag.core.adapter" value="ST-Link"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.debugMode" value="SWD"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.clockDiv" value="2M"/>
+      <Option name="org.coocox.codebugger.gdbjtag.corerunToMain" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkgdbserver" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.userDefineGDBScript" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.targetEndianess" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkResetMode" value="Type 0: Normal"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.resetMode" value="SYSRESETREQ"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifSemihost" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifCacheRom" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ipAddress" value="127.0.0.1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.portNumber" value="2009"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.autoDownload" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.verify" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.downloadFuction" value="Erase Effected"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="STM32F10x_HD_512.elf"/>
+    </DebugOption>
+    <ExcludeFile/>
+  </Target>
+  <Components path="./">
+    <Component id="30" name="C Library" path="" type="2"/>
+    <Component id="50" name="CMSIS core" path="" type="2"/>
+    <Component id="440" name="RCC" path="" type="2"/>
+    <Component id="444" name="GPIO" path="" type="2"/>
+    <Component id="451" name="FSMC" path="" type="2"/>
+    <Component id="452" name="SPI" path="" type="2"/>
+    <Component id="456" name="TIM" path="" type="2"/>
+    <Component id="457" name="ADC" path="" type="2"/>
+    <Component id="458" name="USART" path="" type="2"/>
+    <Component id="460" name="CMSIS Boot" path="" type="2"/>
+  </Components>
+  <Files>
+    <File name="guilib/lib/guilib.c" path="../GUILib/guilib/guilib.c" type="1"/>
+    <File name="cncguiaction.c" path="cncguiaction.c" type="1"/>
+    <File name="stm_lib/inc/stm32f10x_fsmc.h" path="stm_lib/inc/stm32f10x_fsmc.h" type="1"/>
+    <File name="guilib/lib/touches.c" path="../GUILib/guilib/touches.c" type="1"/>
+    <File name="cmsis/core_cmFunc.h" path="cmsis/core_cmFunc.h" type="1"/>
+    <File name="spindle.c" path="spindle.c" type="1"/>
+    <File name="guilib/fonts/lucida18.h" path="../GUILib/fonts/lucida18.h" type="1"/>
+    <File name="guilib/drivers/ili93xx_gui.c" path="../GUILib/drivers/ili93xx_gui.c" type="1"/>
+    <File name="cmsis_boot/stm32f10x.h" path="cmsis_boot/stm32f10x.h" type="1"/>
+    <File name="veeprom/veeprom.c" path="veeprom/veeprom.c" type="1"/>
+    <File name="cmsis_boot/stm32f10x_conf.h" path="cmsis_boot/stm32f10x_conf.h" type="1"/>
+    <File name="hardware_config.h" path="hardware_config.h" type="1"/>
+    <File name="cncgui.c" path="cncgui.c" type="1"/>
+    <File name="pid.h" path="pid.h" type="1"/>
+    <File name="syscalls/syscalls.c" path="syscalls/syscalls.c" type="1"/>
+    <File name="stm_lib/inc/stm32f10x_spi.h" path="stm_lib/inc/stm32f10x_spi.h" type="1"/>
+    <File name="stm_lib/src/stm32f10x_adc.c" path="stm_lib/src/stm32f10x_adc.c" type="1"/>
+    <File name="guilib/lib" path="" type="2"/>
+    <File name="guilib/hal/fsmc.c" path="../GUILib/hal/fsmc.c" type="1"/>
+    <File name="cncguiupdater.c" path="cncguiupdater.c" type="1"/>
+    <File name="guilib" path="" type="2"/>
+    <File name="veeprom/veeprom.h" path="veeprom/veeprom.h" type="1"/>
+    <File name="guilib/lib/touches.h" path="../GUILib/guilib/touches.h" type="1"/>
+    <File name="stm_lib/src/stm32f10x_gpio.c" path="stm_lib/src/stm32f10x_gpio.c" type="1"/>
+    <File name="guilib/hal/spi.c" path="../GUILib/hal/spi.c" type="1"/>
+    <File name="stm_lib/inc/stm32f10x_usart.h" path="stm_lib/inc/stm32f10x_usart.h" type="1"/>
+    <File name="cmsis_boot/system_stm32f10x.c" path="cmsis_boot/system_stm32f10x.c" type="1"/>
+    <File name="hardware_config.c" path="hardware_config.c" type="1"/>
+    <File name="guilib/lib/guiprivate.h" path="../GUILib/guilib/guiprivate.h" type="1"/>
+    <File name="guilib/fonts/lucida12.c" path="../GUILib/fonts/lucida12.c" type="1"/>
+    <File name="gcode.h" path="gcode.h" type="1"/>
+    <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
+    <File name="guilib/fonts/lucida18.c" path="../GUILib/fonts/lucida18.c" type="1"/>
+    <File name="heatercooler.c" path="heatercooler.c" type="1"/>
+    <File name="stm_lib/src/stm32f10x_rcc.c" path="stm_lib/src/stm32f10x_rcc.c" type="1"/>
+    <File name="guilib/hal" path="" type="2"/>
+    <File name="guilib/fonts/lucida6.h" path="../GUILib/fonts/lucida6.h" type="1"/>
+    <File name="pid.c" path="pid.c" type="1"/>
+    <File name="serialport.h" path="serialport.h" type="1"/>
+    <File name="axiscore.c" path="axiscore.c" type="1"/>
+    <File name="stm_lib/src" path="" type="2"/>
+    <File name="veeprom" path="" type="2"/>
+    <File name="cmsis" path="" type="2"/>
+    <File name="stm_lib" path="" type="2"/>
+    <File name="lang.h" path="lang.h" type="1"/>
+    <File name="guilib/hal/spi.h" path="../GUILib/hal/spi.h" type="1"/>
+    <File name="stm_lib/inc/stm32f10x_adc.h" path="stm_lib/inc/stm32f10x_adc.h" type="1"/>
+    <File name="cmsis_boot/system_stm32f10x.h" path="cmsis_boot/system_stm32f10x.h" type="1"/>
+    <File name="guilib/fonts/lucida6.c" path="../GUILib/fonts/lucida6.c" type="1"/>
+    <File name="guilib/halProxy.c" path="guilib/halProxy.c" type="1"/>
+    <File name="main.c" path="main.c" type="1"/>
+    <File name="guilib/drivers/ili93xx_text.c" path="../GUILib/drivers/ili93xx_text.c" type="1"/>
+    <File name="stm_lib/inc/stm32f10x_tim.h" path="stm_lib/inc/stm32f10x_tim.h" type="1"/>
+    <File name="cmsis_boot" path="" type="2"/>
+    <File name="guilib/drivers/ili93xx.c" path="../GUILib/drivers/ili93xx.c" type="1"/>
+    <File name="beeper.h" path="beeper.h" type="1"/>
+    <File name="guilib/lib/inits.c" path="../GUILib/guilib/inits.c" type="1"/>
+    <File name="usbhost.h" path="usbhost.h" type="1"/>
+    <File name="gcode.c" path="gcode.c" type="1"/>
+    <File name="stm_lib/src/stm32f10x_tim.c" path="stm_lib/src/stm32f10x_tim.c" type="1"/>
+    <File name="cmsis_boot/startup" path="" type="2"/>
+    <File name="raxis.c" path="raxis.c" type="1"/>
+    <File name="snprintf/snprintf.c" path="snprintf/snprintf.c" type="1"/>
+    <File name="cmsis_boot/startup/startup_stm32f10x_hd.c" path="cmsis_boot/startup/startup_stm32f10x_hd.c" type="1"/>
+    <File name="serialport.c" path="serialport.c" type="1"/>
+    <File name="stm_lib/src/stm32f10x_spi.c" path="stm_lib/src/stm32f10x_spi.c" type="1"/>
+    <File name="mcore.h" path="mcore.h" type="1"/>
+    <File name="stm_lib/src/stm32f10x_fsmc.c" path="stm_lib/src/stm32f10x_fsmc.c" type="1"/>
+    <File name="guilib/fonts" path="" type="2"/>
+    <File name="guilib/fonts/lucida12.h" path="../GUILib/fonts/lucida12.h" type="1"/>
+    <File name="guilib/lib/guiprivate.c" path="../GUILib/guilib/guiprivate.c" type="1"/>
+    <File name="guilib/lib/draws.c" path="../GUILib/guilib/draws.c" type="1"/>
+    <File name="guilib/halProxy.h" path="guilib/halProxy.h" type="1"/>
+    <File name="stm_lib/src/stm32f10x_usart.c" path="stm_lib/src/stm32f10x_usart.c" type="1"/>
+    <File name="guilib/drivers/tsc2046.h" path="../GUILib/drivers/tsc2046.h" type="1"/>
+    <File name="stm_lib/inc/stm32f10x_gpio.h" path="stm_lib/inc/stm32f10x_gpio.h" type="1"/>
+    <File name="guilib/fonts/fonts.h" path="../GUILib/fonts/fonts.h" type="1"/>
+    <File name="usbHostProtocol.h" path="usbHostProtocol.h" type="1"/>
+    <File name="statuses.c" path="statuses.c" type="1"/>
+    <File name="cmsis/core_cm3.h" path="cmsis/core_cm3.h" type="1"/>
+    <File name="guilib/lcdProxy.c" path="guilib/lcdProxy.c" type="1"/>
+    <File name="guilib/lib/guilib.h" path="../GUILib/guilib/guilib.h" type="1"/>
+    <File name="guilib/fonts/fonts.c" path="../GUILib/fonts/fonts.c" type="1"/>
+    <File name="guilib/drivers/ili93xx.h" path="../GUILib/drivers/ili93xx.h" type="1"/>
+    <File name="snprintf" path="" type="2"/>
+    <File name="guilib/hal/fsmc.h" path="../GUILib/hal/fsmc.h" type="1"/>
+    <File name="statuses.h" path="statuses.h" type="1"/>
+    <File name="cncgui.h" path="cncgui.h" type="1"/>
+    <File name="stm_lib/inc/stm32f10x_rcc.h" path="stm_lib/inc/stm32f10x_rcc.h" type="1"/>
+    <File name="syscalls" path="" type="2"/>
+    <File name="beeper.c" path="beeper.c" type="1"/>
+    <File name="guilib/drivers/tsc2046.c" path="../GUILib/drivers/tsc2046.c" type="1"/>
+    <File name="guilib/drivers" path="" type="2"/>
+    <File name="guilib/lcdProxy.h" path="guilib/lcdProxy.h" type="1"/>
+    <File name="stm_lib/inc" path="" type="2"/>
+    <File name="cncprotocol.h" path="cncprotocol.h" type="1"/>
+    <File name="usbhost.c" path="usbhost.c" type="1"/>
+  </Files>
+</Project>
